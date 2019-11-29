@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-fetch('http://localhost:4001/data')
+fetch('http://localhost:4000/mock')
     .then(res => res.json())
     .then(data => {
         return data.map(d => {
