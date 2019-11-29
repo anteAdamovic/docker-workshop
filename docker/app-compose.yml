@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    api:
+        container_name: 'docker-workshop-app'
+        image: node:10.16.3-jessie
+        restart: always
+        command: /bin/bash -c "yarn; yarn start;"
+        volumes:
+            - ../app:/usr/src/app
+        working_dir: /usr/src/app
+        ports:
+            - 3001:3000
+        expose:
+            - 3000
+        networks:
+            docker-workshop-network:
+
+networks:
+  docker-workshop-network:
+    external: true
